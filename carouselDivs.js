@@ -1,38 +1,44 @@
-/*button carousel*/
+
+/**********  button carousel function   **********/
+function $carousel () {
+
+/**********  button carousel code condesing   **********/
+
+
+function $hide () {
+   $("#arrowGPa").find(".carousel-item").hide().siblings().hide();
+
+}
+
+
+/**********  button carousel code  **********/
+
+var $hideFront = $(".arrowButtonL").on("click", function () {
+    var $ths = $(this).parent();
+
+    $hide();
+
+    if($ths.prev().is(".carousel-item")) {
+            $ths.prev().show();
+        }else {
+            $ths.siblings().last().show();
+        }
+});
 
 
 var $hideBehind = $(".arrowButton").on("click", function () {
     var $ths = $(this).parent();
 
+        $hide();
 
-$ths.hide();
-$ths.siblings().hide();
+    if($ths.next().is(".carousel-item")) {
+            $ths.next().show();
+        }else {
+            $ths.siblings().first().show();
+        }
+    });
 
-if($ths.next().is(".carousel-item")) {
-        $ths.next().show();
-    }else {
-        $ths.siblings().first().show();
-    }
-});
-
-
-var $hideFront = $(".arrowButtonL").on("click", function () {
-    var $ths = $(this).parent();
-
-
-$ths.hide();
-$ths.siblings().hide();
-
-if($ths.prev().is(".carousel-item")) {
-        $ths.prev().show();
-    }else {
-        $ths.siblings().last().show();
-    }
-});
-
+}
 
 /**********  Runs Button Carousel   **********/
-
-
-$hideBehind;
-$hideFront;
+$carousel();
