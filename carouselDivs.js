@@ -1,9 +1,8 @@
 
 /**********  button carousel function   **********/
-function $carousel () {
+(function() {
 
-/**********  button carousel code condesing   **********/
-
+/**********  button carousel code  **********/
 
 function $hide () {
    $("#arrowGPa").find(".carousel-item").hide().siblings().hide();
@@ -37,8 +36,5 @@ var $hideBehind = $(".arrowButton").on("click", function () {
             $ths.siblings().first().show();
         }
     });
-
-}
-
 /**********  Runs Button Carousel   **********/
-$carousel();
+})();
